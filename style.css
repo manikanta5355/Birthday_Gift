@@ -173,6 +173,32 @@ html, body {
 }
 
 @media (max-width: 768px) {
-  .text-glow { font-size: 2rem; }
-  .text-final { font-size: 3.5rem; }
+  .scene {
+    height: 100dvh; /* Better for mobile browser address bars */
+    padding: 15px;
+  }
+  .glass-card {
+    padding: 25px 20px;
+    border-radius: 16px;
+  }
+  .glass-card--hero {
+    padding: 30px 20px;
+  }
+  .text-glow { 
+    font-size: 1.8rem; 
+  }
+  .hero-title {
+    font-size: 3.2rem;
+  }
+  .hero-subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+  .text-final { 
+    font-size: 3rem; 
+  }
+  .subtitle-final {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+  }
 }
