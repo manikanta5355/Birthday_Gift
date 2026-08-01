@@ -62,6 +62,10 @@ function startCinematic() {
       contentLayer.style.opacity = '1';
       contentLayer.style.pointerEvents = 'auto';
       
+      // Reveal the scroll indicator
+      const scrollInd = document.getElementById('scroll-indicator');
+      if (scrollInd) gsap.to(scrollInd, { opacity: 1, duration: 1.5, delay: 0.5 });
+      
       // Initialize scrolling observer
       initScrollAnimations();
     }
@@ -87,8 +91,14 @@ function initScrollAnimations() {
         // Fade in text card
         if (card.classList.contains('glass-card--ending')) {
           gsap.to(card, { opacity: 1, scale: 1, duration: 1.5, ease: 'power3.out' });
+          // Hide scroll indicator at the end
+          const scrollInd = document.getElementById('scroll-indicator');
+          if (scrollInd) gsap.to(scrollInd, { opacity: 0, duration: 1 });
         } else {
           gsap.to(card, { opacity: 1, y: 0, duration: 1.5, ease: 'power2.out' });
+          // Show scroll indicator for other scenes
+          const scrollInd = document.getElementById('scroll-indicator');
+          if (scrollInd) gsap.to(scrollInd, { opacity: 1, duration: 1 });
         }
         
         // Crossfade Backgrounds
