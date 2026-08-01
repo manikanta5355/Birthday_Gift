@@ -871,7 +871,12 @@ function resize(){
 let resizeRAF = 0;
 window.addEventListener('resize', () => { if (resizeRAF) return; resizeRAF = requestAnimationFrame(() => { resizeRAF = 0; resize(); }); });
 
-resize();
+// Wait for full layout before initial measure
+if (document.readyState === 'complete') {
+  resize();
+} else {
+  window.addEventListener('load', () => setTimeout(resize, 100));
+}
 
 if (reduceMotion){
   drawFinal();

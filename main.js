@@ -23,10 +23,9 @@ let currentBg = null;
 // Called synchronously from the iframe's pointerup event to unlock audio
 window.unlockAudio = function() {
   if (bgMusic) {
-    bgMusic.play().then(() => {
-      bgMusic.pause();
-      bgMusic.currentTime = 0;
-    }).catch(e => console.log('Audio unlock failed:', e));
+    // robust iOS fix: start playing silently during the user gesture!
+    bgMusic.volume = 0;
+    bgMusic.play().catch(e => console.log('Audio unlock failed:', e));
   }
 };
 
@@ -42,7 +41,13 @@ window.addEventListener('message', (event) => {
 function startCinematic() {
   // Play Background Music
   if (bgMusic) {
-    bgMusic.play().catch(e => console.log('Autoplay blocked:', e));
+    if (bgMusic.paused) {
+      bgMusic.volume = 1;
+      bgMusic.play().catch(e => console.log('Autoplay blocked:', e));
+    } else {
+      // It was playing silently from unlockAudio, fade it up
+      gsap.to(bgMusic, { volume: 1, duration: 2 });
+    }
   }
 
   // Fade out the archery intro
