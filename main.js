@@ -18,7 +18,20 @@ const bgFrames = {
 let currentBg = null;
 
 // ==========================================
-// 1. Listen for Archery Completion
+// 1. Audio Unlocking for Mobile
+// ==========================================
+// Called synchronously from the iframe's pointerup event to unlock audio
+window.unlockAudio = function() {
+  if (bgMusic) {
+    bgMusic.play().then(() => {
+      bgMusic.pause();
+      bgMusic.currentTime = 0;
+    }).catch(e => console.log('Audio unlock failed:', e));
+  }
+};
+
+// ==========================================
+// 2. Listen for Archery Completion
 // ==========================================
 window.addEventListener('message', (event) => {
   if (event.data === 'START_CINEMATIC') {

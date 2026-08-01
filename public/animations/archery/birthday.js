@@ -760,6 +760,11 @@ function fire(){
   drawing = false;
   stopBeat();
   cue('release'); cue('whoosh');
+  
+  if (window.parent && window.parent.unlockAudio) {
+    window.parent.unlockAudio();
+  }
+
   filmTL = buildFilm(shotGeom());
   filmTL.play(0);
 }
