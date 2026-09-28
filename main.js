@@ -9,10 +9,10 @@ const bgMusic = document.getElementById('bg-music');
 const bgFrames = {
   'scene-smile': document.getElementById('iframe-heart'),
   'scene-eyes': document.getElementById('iframe-heart'),
-  'scene-memories': document.getElementById('bg-photo1'),
+  'scene-memories': document.getElementById('iframe-heart'),
   'scene-presence': document.getElementById('bg-photo2'),
   'scene-blessing': document.getElementById('bg-photo2'),
-  'scene-ending': document.getElementById('bg-photo3')
+  'scene-ending': document.getElementById('bg-photo2')
 };
 
 let currentBg = null;

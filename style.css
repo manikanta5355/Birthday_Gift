@@ -27,14 +27,8 @@ html, body {
   background-size: cover;
   background-position: center;
 }
-.bg-photo--1 {
-  background-image: url('./media/photo1.jpg');
-}
 .bg-photo--2 {
   background-image: url('./media/photo2.jpg');
-}
-.bg-photo--3 {
-  background-image: url('./media/photo3.jpg');
 }
 .vignette {
   position: absolute;
