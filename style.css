@@ -16,7 +16,7 @@ html, body {
   width: 100vw; height: 100vh;
   z-index: 1;
 }
-.bg-iframe, .bg-ghibli {
+.bg-iframe, .bg-photo {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
@@ -24,11 +24,17 @@ html, body {
   opacity: 0; /* Hidden by default, GSAP handles fades */
   transition: opacity 1.5s ease-in-out;
   pointer-events: none; /* Let clicks pass through */
-}
-.bg-ghibli {
-  background-image: url('/media/ghibli_memory_natural.png');
   background-size: cover;
   background-position: center;
+}
+.bg-photo--1 {
+  background-image: url('/media/photo1.jpg');
+}
+.bg-photo--2 {
+  background-image: url('/media/photo2.jpg');
+}
+.bg-photo--3 {
+  background-image: url('/media/photo3.jpg');
 }
 .vignette {
   position: absolute;
