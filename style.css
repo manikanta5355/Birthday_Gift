@@ -28,7 +28,7 @@ html, body {
   background-position: center;
 }
 .bg-photo--2 {
-  background-image: url('./media/photo2.jpg');
+  background-image: url('/media/photo2.jpg');
 }
 .vignette {
   position: absolute;
