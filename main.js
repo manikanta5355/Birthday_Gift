@@ -10,8 +10,8 @@ const bgFrames = {
   'scene-smile': document.getElementById('iframe-heart'),
   'scene-eyes': document.getElementById('iframe-heart'),
   'scene-memories': document.getElementById('iframe-heart'),
-  'scene-presence': document.getElementById('bg-photo2'),
-  'scene-blessing': document.getElementById('bg-photo2'),
+  'scene-presence': document.getElementById('iframe-heart'),
+  'scene-blessing': document.getElementById('iframe-heart'),
   'scene-ending': document.getElementById('bg-photo2')
 };
 
